@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -5,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
-import { Github, Linkedin, Mail, ExternalLink, Code, Smartphone, Brain, BarChart3, Edit3, ArrowRight, Download, Star, Zap, Sparkles } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink, Code, Brain, BarChart3, Edit3, ArrowRight, Download, Star, Zap, Sparkles, Youtube } from "lucide-react";
 import ParticleBackground from "@/components/ParticleBackground";
 import TypewriterText from "@/components/TypewriterText";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -68,11 +69,6 @@ const Index = () => {
   ];
 
   const services = [
-    {
-      icon: <Smartphone className="w-8 h-8" />,
-      title: "Android App Development",
-      description: "Native Android applications with modern UI/UX"
-    },
     {
       icon: <Code className="w-8 h-8" />,
       title: "Web Development",
@@ -176,7 +172,7 @@ const Index = () => {
             Final-year B.Tech IT student passionate about tech innovation, AI/ML, and building solutions that make a difference.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
             <Button className="group bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25">
               <a href="#projects" className="flex items-center gap-2">
                 Explore My Work 
@@ -185,8 +181,20 @@ const Index = () => {
               </a>
             </Button>
             <Button variant="outline" className="group border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-black px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl">
-              <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-              Download CV
+              <a href="https://drive.google.com/file/d/1tjUsBFBqJKoUtijIB2gNcqiWATNyDwcL/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <Download className="w-5 h-5 group-hover:animate-bounce" />
+                Download CV
+              </a>
+            </Button>
+          </div>
+
+          {/* YouTube Channel Link */}
+          <div className="flex justify-center">
+            <Button variant="outline" className="group border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <a href="https://youtube.com/@prepwithmahii-t1l7m?si=UgTpDVg1v6JLM7Dn" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <Youtube className="w-5 h-5 group-hover:animate-bounce" />
+                PrepWithMahii
+              </a>
             </Button>
           </div>
         </AnimatedSection>
@@ -261,40 +269,84 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Skills Section */}
-      <section id="skills" className="py-20 relative">
-        <div className="container mx-auto px-6">
+      {/* Revolutionary Skills Section */}
+      <section id="skills" className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20"></div>
+        <div className="container mx-auto px-6 relative z-10">
           <AnimatedSection animation="scale-in">
-            <h2 className="text-5xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+              <Zap className="w-12 h-12 inline-block mr-4 text-yellow-400 animate-bounce" />
               Technical Arsenal
             </h2>
+            <p className="text-center text-gray-300 text-xl mb-16 max-w-3xl mx-auto">
+              Powered by cutting-edge technologies and fueled by endless curiosity
+            </p>
           </AnimatedSection>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {Object.entries(skills).map(([category, skillList], index) => (
-              <AnimatedSection key={category} animation="fade-up" delay={index * 100}>
-                <Card className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700 hover:border-blue-400/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 backdrop-blur-sm group">
-                  <CardContent className="p-8">
-                    <h3 className="text-2xl font-semibold mb-6 text-blue-400 flex items-center">
-                      <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mr-3 group-hover:animate-spin"></div>
-                      {category}
-                    </h3>
-                    <div className="flex flex-wrap gap-3">
-                      {skillList.map((skill, skillIndex) => (
-                        <Badge 
-                          key={skill} 
-                          variant="secondary" 
-                          className="bg-gray-700/50 text-gray-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer"
-                          style={{ animationDelay: `${skillIndex * 100}ms` }}
-                        >
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+              <AnimatedSection key={category} animation="fade-up" delay={index * 150}>
+                <div className="relative group">
+                  {/* Animated background glow */}
+                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                  
+                  <Card className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 border-gray-600 hover:border-transparent transition-all duration-500 hover:scale-105 backdrop-blur-xl">
+                    <CardContent className="p-8 relative">
+                      {/* Floating particles effect */}
+                      <div className="absolute top-4 right-4 w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
+                      <div className="absolute top-8 right-8 w-1 h-1 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                      
+                      <div className="flex items-center mb-6">
+                        <div className="w-4 h-4 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mr-3 animate-spin group-hover:animate-pulse"></div>
+                        <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-300">
+                          {category}
+                        </h3>
+                      </div>
+                      
+                      <div className="grid gap-3">
+                        {skillList.map((skill, skillIndex) => (
+                          <div 
+                            key={skill}
+                            className="group/skill relative overflow-hidden"
+                            style={{ animationDelay: `${skillIndex * 100}ms` }}
+                          >
+                            <Badge 
+                              variant="secondary" 
+                              className="w-full justify-start bg-gradient-to-r from-gray-800/80 to-gray-700/80 text-gray-300 border border-gray-600 hover:border-blue-400/50 hover:from-blue-600/20 hover:to-purple-600/20 hover:text-white transition-all duration-500 cursor-pointer relative group-hover/skill:scale-105"
+                            >
+                              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-purple-500/0 group-hover/skill:from-blue-500/10 group-hover/skill:to-purple-500/10 transition-all duration-500"></div>
+                              <span className="relative z-10 font-medium">{skill}</span>
+                              <div className="absolute right-2 w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover/skill:opacity-100 animate-pulse transition-opacity duration-500"></div>
+                            </Badge>
+                          </div>
+                        ))}
+                      </div>
+                      
+                      {/* Progress indicator */}
+                      <div className="mt-6 flex justify-center">
+                        <div className="flex space-x-1">
+                          {[...Array(skillList.length)].map((_, i) => (
+                            <div 
+                              key={i}
+                              className="w-2 h-1 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-50 group-hover:opacity-100 transition-all duration-300"
+                              style={{ animationDelay: `${i * 100}ms` }}
+                            ></div>
+                          ))}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </AnimatedSection>
             ))}
+          </div>
+          
+          {/* Floating skill icons */}
+          <div className="absolute top-20 left-10 text-blue-400/20 animate-float">
+            <Code className="w-16 h-16" />
+          </div>
+          <div className="absolute bottom-20 right-10 text-purple-400/20 animate-float" style={{ animationDelay: '2s' }}>
+            <Brain className="w-20 h-20" />
           </div>
         </div>
       </section>
@@ -308,7 +360,7 @@ const Index = () => {
             </h2>
           </AnimatedSection>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {services.map((service, index) => (
               <AnimatedSection key={index} animation="scale-in" delay={index * 150}>
                 <Card className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700 hover:border-purple-400/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 backdrop-blur-sm group cursor-pointer">
@@ -393,16 +445,17 @@ const Index = () => {
                 <h3 className="text-3xl font-semibold mb-8">Get in Touch</h3>
                 <div className="space-y-6">
                   {[
-                    { icon: <Mail className="w-6 h-6 text-blue-400" />, text: "maheshwary.narkhede@example.com" },
-                    { icon: <Linkedin className="w-6 h-6 text-blue-400" />, text: "linkedin.com/in/maheshwary-narkhede" },
-                    { icon: <Github className="w-6 h-6 text-blue-400" />, text: "github.com/maheshwary-narkhede" }
+                    { icon: <Mail className="w-6 h-6 text-blue-400" />, text: "maheshwarynarkhede103@gmail.com", link: "mailto:maheshwarynarkhede103@gmail.com" },
+                    { icon: <Linkedin className="w-6 h-6 text-blue-400" />, text: "linkedin.com/in/maheshwary-narkhede", link: "https://www.linkedin.com/in/maheshwary-narkhede-0b0335257/" },
+                    { icon: <Github className="w-6 h-6 text-blue-400" />, text: "github.com/MaheshwaryNarkhede", link: "https://github.com/MaheshwaryNarkhede" },
+                    { icon: <Youtube className="w-6 h-6 text-red-400" />, text: "PrepWithMahii", link: "https://youtube.com/@prepwithmahii-t1l7m?si=UgTpDVg1v6JLM7Dn" }
                   ].map((item, index) => (
-                    <div key={index} className="flex items-center gap-4 p-4 rounded-lg bg-gray-800/30 hover:bg-gray-800/50 transition-all duration-300 hover:scale-105 cursor-pointer group">
+                    <a key={index} href={item.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-lg bg-gray-800/30 hover:bg-gray-800/50 transition-all duration-300 hover:scale-105 cursor-pointer group">
                       <div className="group-hover:animate-bounce">
                         {item.icon}
                       </div>
                       <span className="group-hover:text-blue-400 transition-colors">{item.text}</span>
-                    </div>
+                    </a>
                   ))}
                 </div>
               </div>
