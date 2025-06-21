@@ -224,6 +224,9 @@ const Index = () => {
                       <p className="font-semibold text-lg">B.Tech in Information Technology</p>
                       <p className="text-gray-400">JSPM Rajarshi Shahu College of Engineering, Pune</p>
                       <p className="text-gray-400">(2022–2026)</p>
+                      <div className="mt-4 p-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg border border-blue-400/20">
+                        <p className="text-blue-400 font-semibold">CGPA: <span className="text-white text-xl">9.49</span></p>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
