@@ -145,9 +145,9 @@ const Index = () => {
           <div className="mb-8">
             <div className="relative group">
               <img 
-                src="/lovable-uploads/3c9d0479-3e04-424a-9dc2-2727e2109727.png" 
+                src="/lovable-uploads/6e1ddac1-8c47-4f29-8587-9a35d40f459e.png" 
                 alt="Maheshwary Narkhede" 
-                className="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-gradient-to-r from-blue-400 to-purple-500 shadow-2xl hover:scale-110 transition-all duration-500 hover:shadow-blue-500/50"
+                className="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-gradient-to-r from-blue-400 to-purple-500 shadow-2xl hover:scale-110 transition-all duration-500 hover:shadow-blue-500/50 object-cover"
               />
               <div className="absolute inset-0 w-40 h-40 mx-auto rounded-full bg-gradient-to-r from-blue-400/20 to-purple-500/20 animate-ping"></div>
             </div>
